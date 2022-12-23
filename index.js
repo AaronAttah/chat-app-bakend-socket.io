@@ -14,6 +14,10 @@ const io = new Server(server, {
   },
 });
 
+app.get('/', (req,res) => {
+  res.send("health check: chat app is working")
+})
+
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
 
