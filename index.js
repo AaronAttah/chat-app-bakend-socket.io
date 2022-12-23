@@ -9,15 +9,15 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    // origin: "http://localhost:3000",
-    origin: "https://pre-chat.netlify.app/",
+    origin: "http://localhost:3000",
+    // origin: "https://pre-chat.netlify.app/",
     methods: ["GET", "POST"],
   },
 });
 
-app.get('/check', (req,res) => {
-  res.send("health check: chat app is working")
-})
+//   app.get('/check', (req,res) => {
+//   res.send("health check: chat app is working")
+//   })
 
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
